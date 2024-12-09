@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# Secure Auth Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This repository contains the **frontend** implementation of a secure authentication system, built as part of a full-stack solution. It demonstrates a robust, scalable, and maintainable architecture designed with **React** for the frontend.
 
-## Available Scripts
+The accompanying **backend** repository can be found [here](https://github.com/shreyansbhatt/secure-auth-backend).
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
+- **User Authentication**: Includes login and registration pages.
+- **Input Validation**: Enforces input rules using client-side validation.
+- **API Integration**: Handles secure communication with backend APIs via `axios`.
+- **Responsive UI**: Simplified and functional user interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
+- **React**: Library for building the frontend user interface.
+- **React Router**: For routing and navigation between pages.
+- **Axios**: For secure HTTP requests to backend APIs.
+- **CSS**: Minimal custom styles for layout and basic responsiveness.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Best Practices Followed
+As a **Solution Architect**, the project was designed with the following principles:
 
-### `npm run build`
+### **Security**
+1. **Input Validation**: Input fields are validated to enforce integrity before submission.
+2. **Sanitization**: Inputs are trimmed to avoid malicious payloads.
+3. **JWT Handling**: Authentication tokens are securely managed in `localStorage`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Scalability**
+1. **Modular Design**: Components, API calls, and utilities are organized into distinct directories.
+2. **Routing**: The use of React Router allows for clean and scalable navigation between pages.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Code Quality**
+1. **Readability**: The code includes meaningful comments for clarity and maintainability.
+2. **Error Handling**: API responses are handled gracefully with user feedback.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Project Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- **Node.js**: Ensure Node.js is installed (v16+ recommended).
+- **Backend**: Set up the backend from the [secure-auth-backend](https://github.com/shreyansbhatt/secure-auth-backend) repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shreyansbhatt/secure-auth-frontend.git
+   cd secure-auth-frontend
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Create an `.env` file to specify the backend API URL:
+   ```env
+   REACT_APP_API_BASE_URL=http://localhost:4000/auth
+   ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running the Application
+1. Start the development server:
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Access the application in your browser:
+   ```plaintext
+   http://localhost:3001
+   ```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Folder Structure
+```plaintext
+frontend/
+├── src/
+│   ├── components/          # React components (Login, Register)
+│   ├── api/                 # Centralized API calls (auth.js)
+│   ├── utils/               # Validation utilities
+│   ├── index.js             # Entry point
+│   ├── App.jsx              # Main App component with routing
+├── package.json
+├── README.md
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Endpoints
+The application integrates with the following backend API endpoints:
+1. **POST /auth/register**: Registers a new user.
+2. **POST /auth/login**: Authenticates a user and returns a JWT token.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Enhancements
+1. **Styling Framework**: Introduce TailwindCSS or another framework for consistent and dynamic styling.
+2. **State Management**: Implement Redux or Context API for improved global state handling.
+3. **Unit Testing**: Add Jest and React Testing Library for comprehensive test coverage.
+4. **Internationalization (i18n)**: Enable multilingual support for a global audience.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
+Contributions are welcome! Fork the repository, create a feature branch, and submit a pull request.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
